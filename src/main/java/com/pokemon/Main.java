@@ -1,4 +1,4 @@
-package src.main.java.com.pokemon;
+package com.pokemon;
 
 public class Main {
     public static void main(String[] args){
