@@ -1,7 +1,14 @@
 package com.pokemon;
 
+import com.pokemon.api.PokeApi;
+
 public class Main {
     public static void main(String[] args){
-        System.out.println("Projeto Pokemon iniciado!");
+        PokeApi pokeApi = new PokeApi();
+    
+    String pokemonName = "Pikachu";
+    String json = pokeApi.buscarPokemon(pokemonName);
+
+    System.out.println(json);
     }
 }

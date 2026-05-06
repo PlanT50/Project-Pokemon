@@ -1,8 +1,5 @@
 package com.pokemon.api;
 
-public class PokeApi {
-    package com.pokemon.api;
-
 import java.io.IOException;
 import java.net.URI;
 import java.net.http.HttpClient;
@@ -29,4 +26,4 @@ public class PokeApi {
     }
 }
 
-}
+
