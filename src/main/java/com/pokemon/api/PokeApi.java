@@ -21,7 +21,9 @@ public class PokeApi {
             HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
             return response.body();
         } catch (IOException | InterruptedException e) {
-            return "Erro ao buscar Pokemon: " + e.getMessage();
+            System.err.println("Nenhum pokemon encontrado! Erro ao buscar pokemon:" + e.getMessage());
+            return null;
+            
         }
     }
 }
