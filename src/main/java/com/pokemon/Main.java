@@ -9,12 +9,10 @@ import com.google.gson.JsonParser;
 
 public class Main {
     public static void main(String[] args){
+        PokeApi pokeApi = new PokeApi();
+        Scanner scan = new Scanner(System.in);
     while (true) {
 
-    
-        PokeApi pokeApi = new PokeApi();
-    
-        Scanner scan = new Scanner(System.in);
         System.out.println("Qual pokemon quer ver?");
         String pokemonName = scan.nextLine();
 
@@ -26,6 +24,8 @@ public class Main {
         String json = pokeApi.buscarPokemon(pokemonName);
 
         if (json == null) {
+            System.out.println("Pokemon não existe. Digite Novamente");
+            clearTer();  
             continue;
         }
 
@@ -34,5 +34,10 @@ public class Main {
         Pokemon pokemonInfo = new Pokemon();
         pokemonInfo.pokeStats(pokemon);
     }
+}
+
+public static void clearTer(){
+    System.out.print("\033[H\033[2J");
+    System.out.flush();
 }
 }
