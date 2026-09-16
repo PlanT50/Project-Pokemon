@@ -9,22 +9,30 @@ import com.google.gson.JsonParser;
 
 public class Main {
     public static void main(String[] args){
+    while (true) {
+
+    
         PokeApi pokeApi = new PokeApi();
     
-    Scanner scan = new Scanner(System.in);
-    System.out.println("Qual pokemon quer ver?");
-    String pokemonName = scan.nextLine();
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Qual pokemon quer ver?");
+        String pokemonName = scan.nextLine();
+
+        if (pokemonName.equalsIgnoreCase("sair")) {
+            System.out.println("Obrigado, volte logo");
+            break;
+        }
     
-    String json = pokeApi.buscarPokemon(pokemonName);
+        String json = pokeApi.buscarPokemon(pokemonName);
 
-    JsonObject pokemon = JsonParser.parseString(json).getAsJsonObject();
+        if (json == null) {
+            continue;
+        }
 
-    Pokemon pokemonInfo = new Pokemon();
-    pokemonInfo.pokeStats(pokemon);
+        JsonObject pokemon = JsonParser.parseString(json).getAsJsonObject();
 
-
-    
-
-    
+        Pokemon pokemonInfo = new Pokemon();
+        pokemonInfo.pokeStats(pokemon);
     }
+}
 }

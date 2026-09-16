@@ -19,6 +19,10 @@ public class PokeApi {
 
         try {
             HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
+            if (response.statusCode() != 200) {
+                System.err.println("Pokémon não encontrado.");
+                return null;
+}
             return response.body();
         } catch (IOException | InterruptedException e) {
             System.err.println("Nenhum pokemon encontrado! Erro ao buscar pokemon:" + e.getMessage());
