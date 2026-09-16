@@ -32,6 +32,7 @@ public class Main {
         JsonObject pokemon = JsonParser.parseString(json).getAsJsonObject();
 
         Pokemon pokemonInfo = new Pokemon();
+        clearTer();
         pokemonInfo.pokeStats(pokemon);
     }
 }

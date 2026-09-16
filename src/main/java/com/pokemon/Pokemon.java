@@ -11,10 +11,22 @@ public class Pokemon {
     int hp = pokemon.getAsJsonArray("stats").get(0).getAsJsonObject().get("base_stat").getAsInt();
     int atk = pokemon.getAsJsonArray("stats").get(1).getAsJsonObject().get("base_stat").getAsInt();
 
-    System.out.println("Id: " + id);
-    System.out.println("Name: " + name);
-    System.out.println("hp: " + hp);
-    System.out.println("atk: " + atk);
+    String spriteUrl = pokemon.getAsJsonObject("sprites").get("front_default").getAsString();
+
+
+    System.out.println("--------------------------------------------------------");
+    System.out.println("STATS:");                
+    System.out.println("Id: " + id);               
+    System.out.println("Name: " + name);                     TelaPokemon tela = new TelaPokemon();
+    System.out.println("hp: " + hp);                         tela.mostrar(name, spriteUrl);
+    System.out.println("atk: " + atk);             
+    System.out.println("--------------------------------------------------------");
 
     }
+
+
+
+
+
+
 }
