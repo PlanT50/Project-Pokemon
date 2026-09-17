@@ -12,6 +12,8 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;   
 
 public class ScreenMenu {
     private final PokeApi pokeApi = new PokeApi();
@@ -21,6 +23,9 @@ public class ScreenMenu {
 
         TextField campoNome = new TextField();
         campoNome.setPromptText("Exemplo: charmander");
+
+        ImageView sprite = new ImageView();
+        
 
         Button botaoStatus = new Button("Ver status");
         Button botaoBatalha = new Button("Batalha");
@@ -34,7 +39,7 @@ public class ScreenMenu {
                 return;
             }
 
-            buscarPokemon(nome, mensagem);
+            buscarPokemon(nome, mensagem, sprite);
         });
 
         botaoBatalha.setOnAction(evento -> {
@@ -46,6 +51,7 @@ public class ScreenMenu {
         layout.setAlignment(Pos.CENTER);
 
         layout.getChildren().addAll(
+                sprite,
                 instrucao,
                 campoNome,
                 botaoStatus,
@@ -60,7 +66,7 @@ public class ScreenMenu {
         stage.show();
     }
 
-    private void buscarPokemon(String nome, Label mensagem) {
+    private void buscarPokemon(String nome, Label mensagem, ImageView sprite) {
         String json = pokeApi.buscarPokemon(nome);
 
         if(json == null){
@@ -79,6 +85,9 @@ public class ScreenMenu {
         int spdef = pokemon.getAsJsonArray("stats").get(4).getAsJsonObject().get("base_stat").getAsInt();
         int spd = pokemon.getAsJsonArray("stats").get(5).getAsJsonObject().get("base_stat").getAsInt();
         String spriteUrl = pokemon.getAsJsonObject("sprites").get("front_default").getAsString();
+
+        Image img = new Image(spriteUrl, 96, 96, true, true);
+        sprite.setImage(img);
 
         Pokemon pokemonInfo = new Pokemon(id , name, hp, atk, def, spatk, spdef, spd, spriteUrl);
 
