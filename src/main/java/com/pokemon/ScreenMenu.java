@@ -32,7 +32,7 @@ public class ScreenMenu {
             }
 
             buscarPokemon(nome);
-        }
+        });
 
         window.add(panel);
         window.setSize(750, 750);
