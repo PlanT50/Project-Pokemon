@@ -32,7 +32,7 @@ public class Pokemon {
 
 
 
-    public void showStatus(){
+    public String showStatus(){
         StringBuilder sb = new StringBuilder();
         sb.append("--------------------------------------------------------");
         sb.append("STATS:");                
@@ -45,6 +45,8 @@ public class Pokemon {
         sb.append("spdef: " + spdef);
         sb.append("spd: " + spd);
         sb.append("--------------------------------------------------------");
+
+        return sb.toString();
     }
 }
 

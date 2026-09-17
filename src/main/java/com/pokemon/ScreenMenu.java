@@ -25,6 +25,7 @@ public class ScreenMenu {
         Button botaoStatus = new Button("Ver status");
         Button botaoBatalha = new Button("Batalha");
         Label mensagem = new Label();
+        mensagem.setWrapText(true);  
 
         botaoStatus.setOnAction(evento -> {
             String nome = campoNome.getText().trim();
