@@ -13,20 +13,14 @@ public class ScreenMenu {
         JFrame window = new JFrame("Pokedéx");
         JPanel panel = new JPanel(new GridLayout(4, 1, 10, 10));
 
-        JLabel instrucao = new JLabel("Digite o nome de um Pokémon:");
-        JTextField campoNome = new JTextField();
-
         JButton botaoStatus = new JButton("Ver status");
         JButton botaoBatalha = new JButton("Batalha");
 
-
-        window.add(instrucao);
-        window.add(campoNome);
-        window.add(botaoStatus);
-        window.add(botaoBatalha);
+        panel.add(botaoStatus);
+        panel.add(botaoBatalha);
 
         window.add(panel);
-        window.setSize(350, 250);
+        window.setSize(750, 750);
         window.setLocationRelativeTo(null);
         window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         window.setVisible(true);
