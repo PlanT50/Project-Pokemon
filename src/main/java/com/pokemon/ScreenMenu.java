@@ -86,7 +86,7 @@ public class ScreenMenu {
         int spd = pokemon.getAsJsonArray("stats").get(5).getAsJsonObject().get("base_stat").getAsInt();
         String spriteUrl = pokemon.getAsJsonObject("sprites").get("front_default").getAsString();
 
-        Image img = new Image(spriteUrl, 96, 96, true, true);
+        Image img = new Image(spriteUrl, 144, 144, true, true);
         sprite.setImage(img);
 
         Pokemon pokemonInfo = new Pokemon(id , name, hp, atk, def, spatk, spdef, spd, spriteUrl);
