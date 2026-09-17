@@ -1,12 +1,17 @@
 package com.pokemon;
 
-import javax.swing.SwingUtilities;
+import javafx.application.Application;
+import javafx.stage.Stage;
 
-public class Main {
+public class Main extends Application {
+
+    @Override
+    public void start(Stage stage) {
+        ScreenMenu menu = new ScreenMenu();
+        menu.show(stage);
+    }
+
     public static void main(String[] args) {
-        SwingUtilities.invokeLater(() -> {
-            ScreenMenu menu = new ScreenMenu();
-            menu.show();
-        });
+        launch(args);
     }
 }
