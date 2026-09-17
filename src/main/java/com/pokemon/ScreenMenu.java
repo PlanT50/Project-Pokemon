@@ -1,5 +1,9 @@
 package com.pokemon;
 
+
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
+import com.pokemon.api.PokeApi;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
@@ -19,6 +23,7 @@ public class ScreenMenu {
 
         Button botaoStatus = new Button("Ver status");
         Button botaoBatalha = new Button("Batalha");
+        Label mensagem = new Label();
 
         botaoStatus.setOnAction(evento -> {
             String nome = campoNome.getText().trim();
@@ -27,7 +32,7 @@ public class ScreenMenu {
                 return;
             }
 
-            buscarPokemon(nome);
+            buscarPokemon(nome, mensagem);
         });
 
         botaoBatalha.setOnAction(evento -> {
@@ -42,7 +47,8 @@ public class ScreenMenu {
                 instrucao,
                 campoNome,
                 botaoStatus,
-                botaoBatalha
+                botaoBatalha,
+                mensagem
         );
 
         Scene cena = new Scene(layout, 500, 350);
