@@ -1,6 +1,7 @@
 package com.pokemon;
 
 import java.awt.GridLayout;
+import java.awt.TextField;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -15,9 +16,23 @@ public class ScreenMenu {
 
         JButton botaoStatus = new JButton("Ver status");
         JButton botaoBatalha = new JButton("Batalha");
+        JTextField campoNome = new JTextField();
 
+        panel.add(new JLabel("Digite o nome do pokemon"));
+        panel.add(campoNome);
         panel.add(botaoStatus);
         panel.add(botaoBatalha);
+
+
+        botaoStatus.addActionListener(evento -> {
+            String nome = campoNome.getText().trim();
+
+            if(nome.isEmpty()){
+                return;
+            }
+
+            buscarPokemon(nome);
+        }
 
         window.add(panel);
         window.setSize(750, 750);
@@ -26,4 +41,8 @@ public class ScreenMenu {
         window.setVisible(true);
 
     }
+
+    private void buscarPokemon(String nome) {
+    System.out.println("Buscar Pokémon: " + nome);
+}
 }
