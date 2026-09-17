@@ -32,15 +32,12 @@ public class Pokemon {
 
 
 
-
-
-
     public void showStatus(){
         System.out.println("--------------------------------------------------------");
         System.out.println("STATS:");                
         System.out.println("Id: " + id);               
-        System.out.println("Name: " + name);                     TelaPokemon tela = new TelaPokemon();
-        System.out.println("hp: " + hp);                         tela.mostrar(name, spriteUrl);
+        System.out.println("Name: " + name);                     
+        System.out.println("hp: " + hp);                         
         System.out.println("atk: " + atk); 
         System.out.println("def: " + def);
         System.out.println("spatk: " + spatk);
