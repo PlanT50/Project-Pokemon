@@ -81,6 +81,6 @@ public class ScreenMenu {
 
         Pokemon pokemonInfo = new Pokemon(id , name, hp, atk, def, spatk, spdef, spd, spriteUrl);
 
-        mensagem.setText("Pokemon encontrado");
+        mensagem.setText(pokemonInfo.showStatus());
     }
 }

@@ -33,17 +33,18 @@ public class Pokemon {
 
 
     public void showStatus(){
-        System.out.println("--------------------------------------------------------");
-        System.out.println("STATS:");                
-        System.out.println("Id: " + id);               
-        System.out.println("Name: " + name);                     
-        System.out.println("hp: " + hp);                         
-        System.out.println("atk: " + atk); 
-        System.out.println("def: " + def);
-        System.out.println("spatk: " + spatk);
-        System.out.println("spdef: " + spdef);
-        System.out.println("spd: " + spd);
-        System.out.println("--------------------------------------------------------");
+        StringBuilder sb = new StringBuilder();
+        sb.append("--------------------------------------------------------");
+        sb.append("STATS:");                
+        sb.append("Id: " + id);               
+        sb.append("Name: " + name);                     
+        sb.append("hp: " + hp);                         
+        sb.append("atk: " + atk); 
+        sb.append("def: " + def);
+        sb.append("spatk: " + spatk);
+        sb.append("spdef: " + spdef);
+        sb.append("spd: " + spd);
+        sb.append("--------------------------------------------------------");
     }
 }
 
