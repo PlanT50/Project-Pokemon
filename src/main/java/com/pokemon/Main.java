@@ -41,7 +41,7 @@ public class Main {
         int spd = pokemon.getAsJsonArray("stats").get(5).getAsJsonObject().get("base_stat").getAsInt();
         String spriteUrl = pokemon.getAsJsonObject("sprites").get("front_default").getAsString();
 
-        Pokemon pokemonInfo = new Pokemon();
+        Pokemon pokemonInfo = new Pokemon(id,name,hp,atk,def,spatk,spdef,spd,spriteUrl);
         clearTer();
     }
 }

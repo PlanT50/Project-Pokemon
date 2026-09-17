@@ -16,11 +16,11 @@ public class Pokemon {
     private final int spd;
     private final String spriteUrl;
 
-    public Pokemon(int id, String name; int hpmaximo, int hp, int atk, int def, int spatk, int spdef, int spd, String spriteUrl){
+    public Pokemon(int id, String name, int hpmaximo, int atk, int def, int spatk, int spdef, int spd, String spriteUrl){
         this.id = id;
         this.name = name;
         this.hpmaximo = hpmaximo;
-        this.hp = hp;
+        this.hp = hpmaximo;
         this.atk = atk;
         this.def = def;
         this.spatk = spatk;
